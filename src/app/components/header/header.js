@@ -11,18 +11,10 @@ const Header = (props) => {
       <ul className="nav d-inline-flex">
         <li className="nav-item">
           <Link
-            className={classNames("nav-link", {active: props.url === "/"})}
-            to="/"
+            className={classNames("nav-link", {active: props.url === "/myplans"})}
+            to="/myplans"
           >
-            Home <span className="sr-only">(current)</span>
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link
-            className={classNames("nav-link", {active: props.url === "/about"})}
-            to="/about"
-          >
-            About
+            My Plans
           </Link>
         </li>
       </ul>
