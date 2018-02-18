@@ -13,7 +13,7 @@ const Header = (props) => {
     <div className={styles.header}>
       <div className={"container"}>
         <Link id={styles["home"]} to={"/"}>RIDEPLAN</Link>
-        <Link id={styles["myplan"]} to={"/myplan"}>My Plans</Link>
+        <Link id={styles["myplan"]} to={"/myplans"}>My Plans</Link>
 
 
       </div>
