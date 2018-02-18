@@ -20,12 +20,12 @@ export default class PlanCard extends React.Component
 
         <div className={styles["right-80"]}>
           <h3>Aleksandre Ninua</h3>
-          <p>from:</p>
-          <h4>UCLA De Neve Turnaround</h4>
-          <p>at:</p>
-          <h4>7:30 pm</h4>
-          <p>with:</p>
-          <h4>Timothy Gu, Ben Limpanukorn, Yvonne Chen, Hakan Alpay</h4>
+          <p className={styles["label"]}>from:</p>
+          <h5>UCLA De Neve Turnaround</h5>
+          <p className={styles["label"]}>at:</p>
+          <h5>7:30 pm</h5>
+          <p className={styles["label"]}>with:</p>
+          <h5>Timothy Gu, Ben Limpanukorn, Yvonne Chen, Hakan Alpay</h5>
         </div>
 
         </div>
