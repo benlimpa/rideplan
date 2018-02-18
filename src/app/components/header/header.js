@@ -14,8 +14,6 @@ const Header = (props) => {
       <div className={"container"}>
         <Link id={styles["home"]} to={"/"}>RIDEPLAN</Link>
         <Link id={styles["myplan"]} to={"/myplans"}>My Plan</Link>
-
-
       </div>
     </div>
 

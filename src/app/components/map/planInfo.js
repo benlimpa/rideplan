@@ -1,5 +1,7 @@
 import React from "react";
 import * as styles from "./planInfo.scss";
+import planCard from "./planCard";
+import PlanCard from "./planCard";
 
 export default class PlanInfo extends React.Component
 {
@@ -17,18 +19,16 @@ export default class PlanInfo extends React.Component
     return (
       <div className={styles["infoPlan"]}>
         <div className={styles["infoHeader"]}>
-          <h3>LAX Terminal 2</h3>
+          <h2>LAX Terminal 2</h2>
           <button id={styles["closeButton"]} onClick={this.handleClick}>X</button>
           <p>Terminal 6, 600 World Way, Los Angeles, CA 90045</p>
           <button>CREATE A RIDE</button>
         </div>
         <div className={styles["numberFriendsRiding"]}>
-          <h6>3 friends riding here!</h6>
+          <h5>3 friends riding here!</h5>
         </div>
-        <div className={styles["friendPlan"]}>
-          <h1>Alexandre</h1>
 
-        </div>
+        <PlanCard />
       </div>
 
     );
