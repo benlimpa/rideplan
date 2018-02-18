@@ -110,7 +110,7 @@ export default class MainMap extends React.Component
               position={ridePlan.start}
               children={<p>{riderMap.get(ridePlan.owner).name}</p>}
               labelAnchor={{x: 22, y: 0}}
-              labelClass={styles.marker_label}
+              labelClass={styles.marker_label_start}
               icon={{
                 url: imageURL,
                 scaledSize: {
@@ -127,7 +127,7 @@ export default class MainMap extends React.Component
               position={ridePlan.end}
               children={<p>{riderMap.get(ridePlan.owner).name}</p>}
               labelAnchor={{x: 22, y: 0}}
-              labelClass={styles.marker_label}
+              labelClass={styles.marker_label_end}
               icon={{
                 url: imageURL,
                 scaledSize: {

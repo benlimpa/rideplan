@@ -1,10 +1,20 @@
 .map {
   
 }
-.marker_label {
+.marker_label_start {
   font-weight: bold;
   font-size: 1.5em;
-  background-color: rgba($color: white, $alpha: 0.85);
+  background-color: rgba($color: #A7D1AE, $alpha: 0.85);
+  padding-top: 0.25em;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+  width: auto;
+  padding-bottom: 0;
+}
+.marker_label_end {
+  font-weight: bold;
+  font-size: 1.5em;
+  background-color: rgba($color: #D1A7A7, $alpha: 0.85);
   padding-top: 0.25em;
   padding-left: 0.25em;
   padding-right: 0.25em;
