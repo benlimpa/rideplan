@@ -4,15 +4,19 @@ import classNames from "classnames";
 import Link from "pawjs/src/components/link";
 import * as styles from "./header.scss";
 
+
 const Header = (props) => {
   return (
 
     <div className={styles.header}>
       <div className={"container"}>
-        <Link id={"home"} to={"/"}>RIDEPLAN</Link>
-        <Link id={"myplan"} to={"/myPlan"}>My Plan</Link>
+        <Link id={styles["home"]} to={"/"}>RIDEPLAN</Link>
+        <Link id={styles["myplan"]} to={"/myplan"}>My Plan</Link>
+
+
       </div>
     </div>
+
 
 
   );
