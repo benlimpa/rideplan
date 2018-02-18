@@ -8,23 +8,23 @@ import PlanInfo from "./planInfo";
 const riderMap = new Map([
   [ 0, {
     name: "Timothy Gu",
-    profilePic: require("https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-1/p240x240/25289395_580199598990166_6832287032818170474_n.jpg?oh=ee2c9d1db71295e66868275e14569f1f&oe=5B131AD5")
+    profilePic: "https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-1/p240x240/25289395_580199598990166_6832287032818170474_n.jpg?oh=ee2c9d1db71295e66868275e14569f1f&oe=5B131AD5"
   }],
   [ 1, {
     name: "Hakan Alpay",
-    profilePic: require("https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-1/p240x240/18010567_983310241805792_8700761523733602063_n.jpg?oh=558971a81768a91d419bf6c685163ccb&oe=5B057A64")
+    profilePic:"https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-1/p240x240/18010567_983310241805792_8700761523733602063_n.jpg?oh=558971a81768a91d419bf6c685163ccb&oe=5B057A64"
   }],
   [ 2, {
     name: "Arpi Beshlikyan",
-    profilePic: require("https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-1/p240x240/26815372_457947614603212_6180372456965905906_n.jpg?oh=085b2eed13cfec3e10d4c58a204eaf8a&oe=5B264B1E")
+    profilePic: "https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-1/p240x240/26815372_457947614603212_6180372456965905906_n.jpg?oh=085b2eed13cfec3e10d4c58a204eaf8a&oe=5B264B1E"
   }],
   [ 3, {
     name: "Alexandre Ninua",
-    profilePic: require("https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-1/p240x240/26992356_574807149527770_1756966645001432152_n.jpg?oh=6fd4d9853684cc69dadc5b4688b955b3&oe=5B0F60F4")
+    profilePic: "https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-1/p240x240/26992356_574807149527770_1756966645001432152_n.jpg?oh=6fd4d9853684cc69dadc5b4688b955b3&oe=5B0F60F4"
   }],
   [ 4, {
     name: "Ben Limpanukorn",
-    profilePic: require("https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-1/c120.0.240.240/p240x240/12654448_1013133388725788_2502109814197930535_n.jpg?oh=7dac92950ee322bd0ee6d36df8d99bb6&oe=5B0F72CC")
+    profilePic: "https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-1/c120.0.240.240/p240x240/12654448_1013133388725788_2502109814197930535_n.jpg?oh=7dac92950ee322bd0ee6d36df8d99bb6&oe=5B0F72CC"
   }],
 ]);
 
