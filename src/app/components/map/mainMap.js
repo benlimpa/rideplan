@@ -1,5 +1,8 @@
-import {withScriptjs, withGoogleMap, GoogleMap, Marker} from "react-google-maps";
+import {withScriptjs, withGoogleMap, GoogleMap, Marker, DirectionsRenderer, Polyline} from "react-google-maps";
 import React from "react";
+import PlanInfo from "./planInfo"
+
+const google = window.google;
 
 const riderMap = new Map([
   [ 0, {
@@ -12,20 +15,36 @@ const riderMap = new Map([
   }]
 ]);
 
-const riderPositions = [
-  {id: 0, pos: {lat: 34.069735, lng: -118.445130}}
-];
-
 const ridePlans = [
   {
     owner: 0,
     start: {lat: 34.069735, lng: -118.445130},
-    end: {lat: 34.069735, lng: -118.445130}
+    end: {lat: 33.069735, lng: -118.445130}
   }
 ];  
 
 export default class MainMap extends React.Component
 {
+  constructor(props)
+  {
+    super(props);
+    this.state = {
+      showPlanWindow: false,
+      selectedPlan: null,
+    };
+    this.closePlanWindow = this.closePlanWindow.bind(this);
+  }
+
+  renderPlanInfo()
+  {
+    return (<PlanInfo ridePlan={ridePlans[this.state.selectedPlan]} riderMap={riderMap} close={this.closePlanWindow}/>);
+  }
+
+  closePlanWindow()
+  {
+    this.setState({showPlanWindow: false});
+  }
+  
   render()
   {
     const MapWithAMarker = withScriptjs(withGoogleMap(props =>
@@ -33,18 +52,40 @@ export default class MainMap extends React.Component
         defaultZoom={8}
         defaultCenter={{lat: 34.069735, lng: -118.445130}}
       >
-        {riderPositions.map(riderPos => {
-          const imageURL = riderMap.get(riderPos.id).profilePic;
-          return <Marker
-            position={riderPos.pos}
-            label={riderMap.get(riderPos.id).name}
-            icon={{
-              url: imageURL,
-              scaledSize: {
-                height: 75,
-                width: 75
-              }
-            }}/>;
+        {this.state.showPlanWindow && this.renderPlanInfo()}
+        {ridePlans.map((ridePlan, index) => {
+          const imageURL = riderMap.get(ridePlan.owner).profilePic;
+          return (<div>
+            <Marker
+              position={ridePlan.start}
+              label={riderMap.get(ridePlan.owner).name}
+              icon={{
+                url: imageURL,
+                scaledSize: {
+                  height: 50,
+                  width: 50
+                }
+              }}
+              onClick={() => {
+                this.setState({showPlanWindow: true, selectedPlan: index});
+              }}
+            />
+            <Polyline path={[ridePlan.start, ridePlan.end]}/>
+            <Marker
+              position={ridePlan.end}
+              label={riderMap.get(ridePlan.owner).name}
+              icon={{
+                url: imageURL,
+                scaledSize: {
+                  height: 50,
+                  width: 50
+                }
+              }}
+              onClick={() => {
+                this.setState({showPlanWindow: true, selectedPlan: index});
+              }}
+            />
+          </div>);
         })}
       </GoogleMap>
     ));
