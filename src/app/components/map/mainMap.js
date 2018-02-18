@@ -1,6 +1,7 @@
 import { compose, withProps } from "recompose"
 import {withScriptjs, withGoogleMap, GoogleMap, Marker} from "react-google-maps";
 import React from "react";
+import * as styles from "./mainMap.scss";
 
 const riderMap = new Map([
   [ 0, {
@@ -30,7 +31,7 @@ export default class MainMap extends React.Component
   render()
   {
     const MapWithAMarker = withScriptjs(withGoogleMap(props =>
-      <GoogleMap
+      <GoogleMap className={"map"}
         defaultZoom={8}
         defaultCenter={{lat: 34.069735, lng: -118.445130}}
       >
@@ -53,7 +54,7 @@ export default class MainMap extends React.Component
       <MapWithAMarker
         googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuOlQqOGMUv1a_gO0xbY0jAab0sHfSRw8&v=3.exp&libraries=geometry,drawing,places"
         loadingElement={<div style={{ height: "100%" }} />}
-        containerElement={<div style={{ height: "400px" }} />}
+        containerElement={<div style={{ height: window.innerHeight }} />}
         mapElement={<div style={{ height: "100%" }} />}
       />
     );

@@ -6,7 +6,6 @@ export default class Home extends React.Component
   {
     return (
       <div id="Home">
-        <h1>Test</h1>
         <MainMap/>
       </div>);
   }
