@@ -1,8 +1,7 @@
-import {withScriptjs, withGoogleMap, GoogleMap, Marker, DirectionsRenderer, Polyline} from "react-google-maps";
+import {withScriptjs, withGoogleMap, GoogleMap, Marker, Polyline} from "react-google-maps";
 import React from "react";
-import PlanInfo from "./planInfo"
-
-const google = window.google;
+import * as styles from "./mainMap.scss";
+import PlanInfo from "./planInfo";
 
 const riderMap = new Map([
   [ 0, {
@@ -21,7 +20,7 @@ const ridePlans = [
     start: {lat: 34.069735, lng: -118.445130},
     end: {lat: 33.069735, lng: -118.445130}
   }
-];  
+];
 
 export default class MainMap extends React.Component
 {
@@ -48,7 +47,7 @@ export default class MainMap extends React.Component
   render()
   {
     const MapWithAMarker = withScriptjs(withGoogleMap(props =>
-      <GoogleMap
+      <GoogleMap className={styles.map}
         defaultZoom={8}
         defaultCenter={{lat: 34.069735, lng: -118.445130}}
       >
@@ -93,7 +92,7 @@ export default class MainMap extends React.Component
       <MapWithAMarker
         googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuOlQqOGMUv1a_gO0xbY0jAab0sHfSRw8&v=3.exp&libraries=geometry,drawing,places"
         loadingElement={<div style={{ height: "100%" }} />}
-        containerElement={<div style={{ height: "400px" }} />}
+        containerElement={<div style={{ height: window.innerHeight }} />}
         mapElement={<div style={{ height: "100%" }} />}
       />
     );

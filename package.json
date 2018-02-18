@@ -26,7 +26,8 @@
   },
   "dependencies": {
     "google-maps-react": "^1.1.2",
-    "react-google-maps": "^9.4.5"
+    "react-google-maps": "^9.4.5",
+    "recompose": "^0.26.0"
   },
   "devDependencies": {
     "pawjs": "^0.4.6"
