@@ -6,19 +6,15 @@ import * as styles from "./header.scss";
 
 const Header = (props) => {
   return (
-    <div className={classNames("container", styles.header)}>
-      <Link className="m-2" to="/">Logo</Link>
-      <ul className="nav d-inline-flex">
-        <li className="nav-item">
-          <Link
-            className={classNames("nav-link", {active: props.url === "/myplans"})}
-            to="/myplans"
-          >
-            My Plans
-          </Link>
-        </li>
-      </ul>
+
+    <div className={styles.header}>
+      <div className={"container"}>
+        <Link id={"home"} to={"/"}>RIDEPLAN</Link>
+        <Link id={"myplan"} to={"/myPlan"}>My Plan</Link>
+      </div>
     </div>
+
+
   );
 };
 

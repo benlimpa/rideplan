@@ -1,3 +1,4 @@
+import { compose, withProps } from "recompose"
 import {withScriptjs, withGoogleMap, GoogleMap, Marker} from "react-google-maps";
 import React from "react";
 
@@ -22,7 +23,7 @@ const ridePlans = [
     start: {lat: 34.069735, lng: -118.445130},
     end: {lat: 34.069735, lng: -118.445130}
   }
-];  
+];
 
 export default class MainMap extends React.Component
 {
