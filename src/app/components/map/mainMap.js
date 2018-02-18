@@ -30,6 +30,7 @@ export default class MainMap extends React.Component
     this.state = {
       showPlanWindow: false,
       selectedPlan: null,
+      mapHeight: window.innerHeight
     };
     this.closePlanWindow = this.closePlanWindow.bind(this);
   }
@@ -41,9 +42,9 @@ export default class MainMap extends React.Component
 
   closePlanWindow()
   {
-    this.setState({showPlanWindow: false});
+    this.setState({showPlanWindow: false, mapHeight: window.innerHeight});
   }
-  
+
   render()
   {
     const MapWithAMarker = withScriptjs(withGoogleMap(props =>
@@ -66,7 +67,7 @@ export default class MainMap extends React.Component
                 }
               }}
               onClick={() => {
-                this.setState({showPlanWindow: true, selectedPlan: index});
+                this.setState({showPlanWindow: true, selectedPlan: index, mapHeight: window.innerHeight * 0.5});
               }}
             />
             <Polyline path={[ridePlan.start, ridePlan.end]}/>
@@ -81,7 +82,7 @@ export default class MainMap extends React.Component
                 }
               }}
               onClick={() => {
-                this.setState({showPlanWindow: true, selectedPlan: index});
+                this.setState({showPlanWindow: true, selectedPlan: index, mapHeight: window.innerHeight * 0.5});
               }}
             />
           </div>);
@@ -92,7 +93,7 @@ export default class MainMap extends React.Component
       <MapWithAMarker
         googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuOlQqOGMUv1a_gO0xbY0jAab0sHfSRw8&v=3.exp&libraries=geometry,drawing,places"
         loadingElement={<div style={{ height: "100%" }} />}
-        containerElement={<div style={{ height: window.innerHeight }} />}
+        containerElement={<div style={{ height: this.state.mapHeight }} />}
         mapElement={<div style={{ height: "100%" }} />}
       />
     );
