@@ -1,4 +1,5 @@
 import {withScriptjs, withGoogleMap, GoogleMap, Marker, Polyline} from "react-google-maps";
+import {MarkerWithLabel} from "react-google-maps/lib/components/addons/MarkerWithLabel";
 import React from "react";
 import * as styles from "./mainMap.scss";
 import PlanInfo from "./planInfo";
@@ -31,15 +32,15 @@ const riderMap = new Map([
 const ridePlans = [
   {
     owner: 0,
-    start: {lat: 34.069735, lng: -118.445130},
-    end: {lat: 33.069735, lng: -118.445130},
+    start: {lat: 34.068970, lng: -118.439123},
+    end: {lat: 34.066911, lng: -118.428831},
     time: "7:30 pm",
     among: [0, 1, 2, 3]
   },
   {
     owner: 4,
-    start: {lat: 34.069735, lng: -118.445130},
-    end: {lat: 33.069735, lng: -118.445130},
+    start: {lat: 34.061673, lng: -118.448439},
+    end: {lat: 34.062447, lng: -118.435111},
     time: "9:00 pm",
     among: 4
   }
@@ -74,7 +75,7 @@ export default class MainMap extends React.Component
 
   openPlanWindow(index, newCenter)
   {
-    this.setState({showPlanWindow: true, selectedPlan: index, mapHeight: window.innerHeight*0.2, centerTo: newCenter});
+    this.setState({showPlanWindow: true, selectedPlan: index, mapHeight: window.innerHeight*0.5, centerTo: newCenter});
   }
   closePlanWindow()
   {
@@ -97,7 +98,7 @@ export default class MainMap extends React.Component
   {
     const MapWithAMarker = withScriptjs(withGoogleMap(props => (
       <GoogleMap className={styles.map}
-        defaultZoom={8}
+        defaultZoom={15}
         defaultCenter={{lat: 34.069735, lng: -118.445130}}
         ref={this.googleMapRef}
       >
@@ -105,9 +106,11 @@ export default class MainMap extends React.Component
         {ridePlans.map((ridePlan, index) => {
           const imageURL = riderMap.get(ridePlan.owner).profilePic;
           return (<div>
-            <Marker
+            <MarkerWithLabel
               position={ridePlan.start}
-              label={riderMap.get(ridePlan.owner).name}
+              children={<p>{riderMap.get(ridePlan.owner).name}</p>}
+              labelAnchor={{x: 22, y: 0}}
+              labelClass={styles.marker_label}
               icon={{
                 url: imageURL,
                 scaledSize: {
@@ -120,9 +123,11 @@ export default class MainMap extends React.Component
               }}
             />
             <Polyline path={[ridePlan.start, ridePlan.end]}/>
-            <Marker
+            <MarkerWithLabel
               position={ridePlan.end}
-              label={riderMap.get(ridePlan.owner).name}
+              children={<p>{riderMap.get(ridePlan.owner).name}</p>}
+              labelAnchor={{x: 22, y: 0}}
+              labelClass={styles.marker_label}
               icon={{
                 url: imageURL,
                 scaledSize: {

@@ -1,3 +1,13 @@
 .map {
   
 }
+.marker_label {
+  font-weight: bold;
+  font-size: 1.5em;
+  background-color: rgba($color: white, $alpha: 0.85);
+  padding-top: 0.25em;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+  width: auto;
+  padding-bottom: 0;
+}
