@@ -1,4 +1,5 @@
 import React from "react";
+import PlanCard from "../map/planCard";
 
 const ridePlans = [
   {
@@ -17,7 +18,7 @@ export default class MyPlans extends React.Component
   render()
   {
     return (
-      null
+      <PlanCard />
     );
   }
 }
