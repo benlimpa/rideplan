@@ -35,7 +35,6 @@ export default class Loader extends Component {
           {this.props.children || null}
         </Transition>
         <Header />
-        <Footer />
       </div>
     );
   }
