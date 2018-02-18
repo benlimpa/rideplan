@@ -36,11 +36,25 @@
 }
 
 .fir-clickcircle {
-  height: 80px;
-  width: 80px;
+  height: auto;
+  width: 100%;
   border-radius: 100%;
   cursor: pointer;
   display: flex;
+
+  padding: 10px;
+  display: block;
+  align-items: center;
+  margin-bottom: 40px;
+  position: relative;
+  text-decoration: none;
+  width: 100%;
+  color: var(--fir-color-grey);
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  margin-top: 2px;
+
 }
 
 .fir-image-figure {
@@ -51,14 +65,12 @@
   position: relative;
   text-decoration: none;
   width: 100%;
+  color: var(--fir-color-grey);
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  margin-top: 2px;
 
-  .fig-author-figure-title {
-    color: var(--fir-color-grey);
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-weight: 400;
-    font-size: 15px;
-    margin-top: 2px;
-  }
 }
 
 .fill-in {
